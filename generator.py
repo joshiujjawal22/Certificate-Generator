@@ -58,5 +58,5 @@ if __name__ == "__main__":
       
     # path to sample certificate 
     CERTIFICATE = "certificate/Certificate.png"
-   
+
     coupons(NAMES, CERTIFICATE, FONT) 
