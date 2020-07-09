@@ -3,6 +3,8 @@
 Created on Wed Jul  8 22:44:58 2020
 
 @author: Ujjawal
+
+Certificate has been taken from geeks for geeks
 """
 from PIL import Image, ImageDraw, ImageFont 
   
@@ -11,52 +13,52 @@ def coupons(names: list, certificate: str, font_path: str):
    
     for name in names: 
           
-        # adjust the position according to  
-        # your sample 
-        text_y_position = 900 
+        # Position of text
+        text_vert_position = 900 
    
         # opens the image 
         img = Image.open(certificate, mode ='r') 
           
         # gets the image width 
-        image_width = img.width 
-          
-        # gets the image height 
-        image_height = img.height  
+        image_width = img.width  
    
-        # creates a drawing canvas overlay  
-        # on top of the image 
         draw = ImageDraw.Draw(img) 
-   
+
+        font = ImageFont.truetype( 
+            font_path, 
+            200 
+        ) 
+
+        # To get the text Width or Height
+        text_width, _ = draw.textsize(name, font = font)
    
         draw.text( 
-            ( 
-                # this calculation is done  
-                # to centre the image 
-                (image_width - 200) / 2, 
-                text_y_position 
+            (   
+                # To center the image
+                (image_width - text_width) / 2 , 
+                text_vert_position 
             ), 
             name, 
-                   ) 
+            fill=150,
+            font = font,
+              ) 
    
-        # saves the image in png format 
-        img.save("{}.png".format(name))  
+        # Saves the image in png format 
+        img.save("GeneratedStuff/{}.png".format(name))  
   
 
-# Driver Code 
+
 if __name__ == "__main__": 
-   
-    # some example of names 
-    NAMES = ['Frank Muller', 
-             'Mathew Frankfurt', 
-             'Cristopher Greman', 
-             'Natelie Wemberg', 
-             'John Ken'] 
+    
+    NAMES = ['Ankur', 
+             'Akshit', 
+             'Chetan', 
+             'Nikunj', 
+             'Utkarsh'] 
       
-    # path to font 
-    FONT = "C:/WINDOWS/FONTS?ADOBEARABIC-ITALIC.OTF"
-      
-    # path to sample certificate 
+    
+    FONT = "C:/Windows/Fonts/AdobeArabic-Bold.otf"
+       
     CERTIFICATE = "certificate/Certificate.png"
 
     coupons(NAMES, CERTIFICATE, FONT) 
