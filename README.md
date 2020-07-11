@@ -4,7 +4,7 @@
 ## Screenshots
 
 <p align="center">
-  <img src="GeneratedStuff/Nikunj.png" alt="Template"/>
+  <img src="certificate/Certificate.png" alt="Template"/>
   <img src="GeneratedStuff/Ankur.png" alt="Template after automation"/>
 </p>
 
@@ -23,7 +23,8 @@ pip install Pillow
 ```Geeks For Geeks```
 
 ### Library:
-```For query regarding **Pillow**: ```
+For query regarding **Pillow**:
+<br>
 [Read The Docs](https://pillow.readthedocs.io/en/stable/installation.html)
 
 
